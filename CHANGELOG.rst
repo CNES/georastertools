@@ -20,3 +20,9 @@ Version 0.7.0
 
 - Rasterio plugin
 - Continuous Integration
+
+Version 0.7.1
+-------------
+
+- Corrected Hillshade regression
+- Added additionnal tests for Hillshade and SVF
