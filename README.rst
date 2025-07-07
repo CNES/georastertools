@@ -1,6 +1,6 @@
-============
-Raster tools
-============
+==============
+Georastertools
+==============
 
 This project provides a command line named **georastertools** that enables various calculation tools:
 
@@ -24,6 +24,12 @@ It is thus possible to input files in the command line in any of the formats abo
 It is also possible to specify your own product types by providing a JSON file as a parameter of the command line (cf. docs/usage.rst)
 
 Finally, **georastertools** offers an API for calling these different tools in Python and for extending its capabilities, for example by defining new radiometric indices.
+
+
+Documentation
+=============
+
+The official documentation of Georastertools is available `here <https://georastertools.readthedocs.io/en/latest/index.html>`_
 
 Installation
 ============
