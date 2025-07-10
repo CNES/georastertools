@@ -29,11 +29,11 @@ if __name__ == "__main__":
                   'kiwisolver==1.4.5',
                   'matplotlib==3.7.3',
                   'packaging==24.1',
-                  'fiona==1.8.21',
+                  'fiona==1.9.6',
                   'sphinx_rtd_theme==3.0.1',
                   'pip==24.2',
                   'sphinx==7.1.2',
-                  'scipy==1.8',
+                  'scipy==1.16',
                   'pyscaffold',
                   'gdal==3.5.0',
                   'tqdm==4.66'
