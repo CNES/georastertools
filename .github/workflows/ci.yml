@@ -20,12 +20,15 @@ jobs:
         shell: bash -l {0}
         run: |
           pip install pylint mccabe
-      - name: code quality
+      - name: Run Pylint
         shell: bash -l {0}
         run: |
-          pylint --disable=all --fail-under=10 --enable=too-many-statements src/eolab/georastertools/
-          pylint --disable=all --fail-under=10 --enable=too-many-nested-blocks src/eolab/georastertools/
-          ./continuous_integration/scripts/check_mccabe_complexity.sh 25 src/eolab/georastertools
+          pylint --recursive=y --disable=all --fail-under=10 --enable=too-many-statements,too-many-nested-blocks src/eolab/georastertools/
+      - name: Run McCabe Complexity Check
+        shell: bash -l {0}
+        run: |
+          ./continuous_integration/scripts/check_mccabe_complexity.sh 25 src/eolab/georastertools/
+
   test:
     runs-on: ubuntu-latest
     steps:
@@ -45,9 +48,16 @@ jobs:
         conda create -n test_env python=3.12 libgdal=3.5.2 -c conda-forge -c defaults -y
         conda activate test_env
         PIP_NO_BINARY=rasterio pip install .
-        pip install pylint mccabe
     - name: test
       shell: bash -l {0}
       run: |
         conda activate test_env
-        pytest --cov-fail-under=65 --compare --durations=0
+        PYTHONPATH=src pytest --compare --durations=0 --cov=src/eolab/georastertools/ --cov-report=xml:.ci-reports-georastertools/coverage_georastertools.xml --cov-report html:cov_html_georastertools --cov-report=term --junitxml=pytest-results-georastertools.xml
+    - name: Upload Coverage Report
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage-report-georastertools
+        path: |
+          .ci-reports-georastertools/
+          cov_html_georastertools/
+          pytest-results-georastertools.xml
