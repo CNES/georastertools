@@ -1,6 +1,6 @@
 # Python # 
 *.py[cod] 
-*$py.class 
+*$py.class
 
 # Distribution / packaging 
 .Python build/ 
@@ -20,5 +20,13 @@ dist/
 *.egg 
 *.whl
 *.manifest 
-*.spec 
+*.spec
+
+# Tests
+.coverage
+listing.lst
+
+# IDE
+.idea/
+.ipynb_checkpoints/
 

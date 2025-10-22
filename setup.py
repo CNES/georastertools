@@ -19,7 +19,7 @@ if __name__ == "__main__":
               packages=find_packages(exclude=['tests']),
               include_package_data=True,
               zip_safe=False,
-              setup_requires = ["setuptools_scm"],
+              setup_requires=["setuptools_scm"],
               install_requires=[
                   'click==8.1.8',
                   'rasterio',
@@ -33,9 +33,9 @@ if __name__ == "__main__":
                   'sphinx_rtd_theme==3.0.1',
                   'pip==24.2',
                   'sphinx==7.1.2',
-                  'scipy==1.16',
+                  'scipy',
                   'pyscaffold',
-                  'gdal==3.5.0',
+                  'gdal>=3.5.0,<3.10',
                   'tqdm==4.66'
               ],
               entry_points="""

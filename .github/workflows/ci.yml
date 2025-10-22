@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Python 3.10
+      - name: Setup Python 3.12
         uses: actions/setup-python@v3
         with:
-          python-version: "3.10"
+          python-version: "3.12"
       - name: Create test env
         shell: bash -l {0}
         run: |
@@ -30,19 +30,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: Setup Python 3.10
+    - name: Setup Python 3.12
       uses: actions/setup-python@v3
       with:
-        python-version: "3.10"
+        python-version: "3.12"
     - name: Setup Miniconda
       uses: conda-incubator/setup-miniconda@v2
       with:
-        python-version: '3.10'
+        python-version: '3.12'
         auto-activate-base: false
     - name: Create test env
       shell: bash -l {0}
       run: |
-        conda create -n test_env python=3.12 libgdal=3.5.2 -c conda-forge -c defaults -y
+        conda create -n test_env python=3.12 libgdal=3.9 -c conda-forge -c defaults -y
         conda activate test_env
         PIP_NO_BINARY=rasterio pip install .
         pip install pylint mccabe
