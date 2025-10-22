@@ -25,7 +25,7 @@ if __name__ == "__main__":
                   'rasterio',
                   'pytest>=3.6',
                   'pytest-cov',
-                  'geopandas==0.13',
+                  'geopandas>=0.13',
                   'kiwisolver==1.4.5',
                   'matplotlib==3.7.3',
                   'packaging==24.1',
@@ -36,7 +36,7 @@ if __name__ == "__main__":
                   'scipy',
                   'pyscaffold',
                   'gdal>=3.5.0,<3.10',
-                  'tqdm==4.66'
+                  'tqdm>=4.66'
               ],
               entry_points="""
                 [rasterio.rio_plugins]
