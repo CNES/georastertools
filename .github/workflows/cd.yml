@@ -16,21 +16,21 @@ jobs:
       name: pypi
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Python 3.10
+      - name: Setup Python 3.12
         uses: actions/setup-python@v3
         with:
-          python-version: "3.10"
+          python-version: "3.12"
 
       - name: Setup Miniconda
         uses: conda-incubator/setup-miniconda@v2
         with:
-          python-version: '3.10'
+          python-version: '3.12'
           auto-activate-base: false
 
       - name: Build package
         shell: bash -l {0}
         run: |
-          conda create -n deploy_env python=3.10 libgdal=3.5.2 build -c conda-forge -y
+          conda create -n deploy_env python=3.12 build -c conda-forge -y
           conda activate deploy_env
           python -m build -C--global-option=bdist_wheel -C--global-option=--build-number=0 --wheel
 
