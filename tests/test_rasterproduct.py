@@ -18,7 +18,13 @@ __license__ = "Apache v2.0"
 
 from .utils4test import RastertoolsTestsData
 
-__refdir = RastertoolsTestsData.tests_ref_data_dir.replace(os.getcwd() + "/", "") + "/test_rasterproduct/"
+from packaging.version import Version
+from osgeo import gdal
+
+if Version(gdal.__version__) < Version("3.8.0"):
+    __refdir = RastertoolsTestsData.tests_ref_data_dir.replace(os.getcwd() + "/", "") + "/test_rasterproduct/gdal-3.8/"
+else:
+    __refdir = RastertoolsTestsData.tests_ref_data_dir.replace(os.getcwd() + "/", "") + "/test_rasterproduct/gdal+3.8/"
 
 
 def test_rasterproduct_valid_parameters():

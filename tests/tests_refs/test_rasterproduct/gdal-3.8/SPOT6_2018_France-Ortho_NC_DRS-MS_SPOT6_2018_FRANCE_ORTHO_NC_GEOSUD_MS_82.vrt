@@ -1,0 +1,45 @@
+<VRTDataset rasterXSize="1867" rasterYSize="1352">
+  <SRS dataAxisToSRSAxisMapping="1,2">PROJCS["Corrected Satellite Data",GEOGCS["4171 RGF93 (FR.)",DATUM["unknown",SPHEROID["GRS 1980",6378137,298.257222101004,AUTHORITY["EPSG","7019"]]],PRIMEM["Greenwich",0],UNIT["unknown",0.0174532925199433]],PROJECTION["Lambert_Conformal_Conic_2SP"],PARAMETER["latitude_of_origin",46.5],PARAMETER["central_meridian",3],PARAMETER["standard_parallel_1",44],PARAMETER["standard_parallel_2",49],PARAMETER["false_easting",700000],PARAMETER["false_northing",6600000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH]]</SRS>
+  <GeoTransform>  4.8259200000000000e+05,  6.0000000000000000e+00,  0.0000000000000000e+00,  6.2983440000000000e+06,  0.0000000000000000e+00, -6.0000000000000000e+00</GeoTransform>
+  <VRTRasterBand dataType="Float32" band="1">
+    <Description>Rouge (625-695 nm)</Description>
+    <NoDataValue>-10000</NoDataValue>
+    <ColorInterp>Gray</ColorInterp>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="0">/vsitar/tests/tests_data/SPOT6_2018_France-Ortho_NC_DRS-MS_SPOT6_2018_FRANCE_ORTHO_NC_GEOSUD_MS_82.tar.gz/SPOT6_2018_FRANCE_ORTHO_NC_GEOSUD_MS_82/PROD_SPOT6_001/VOL_SPOT6_001_A/IMG_SPOT6_MS_001_A/IMG_SPOT6_MS_201805111031189_ORT_SPOT6_20180517_1333011n1b80qobn5ex_1_R1C1.TIF</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SrcRect xOff="0" yOff="0" xSize="1867" ySize="1352" />
+      <DstRect xOff="0" yOff="0" xSize="1867" ySize="1352" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="2">
+    <Description>Vert (530-590 nm)</Description>
+    <NoDataValue>-10000</NoDataValue>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="0">/vsitar/tests/tests_data/SPOT6_2018_France-Ortho_NC_DRS-MS_SPOT6_2018_FRANCE_ORTHO_NC_GEOSUD_MS_82.tar.gz/SPOT6_2018_FRANCE_ORTHO_NC_GEOSUD_MS_82/PROD_SPOT6_001/VOL_SPOT6_001_A/IMG_SPOT6_MS_001_A/IMG_SPOT6_MS_201805111031189_ORT_SPOT6_20180517_1333011n1b80qobn5ex_1_R1C1.TIF</SourceFilename>
+      <SourceBand>2</SourceBand>
+      <SrcRect xOff="0" yOff="0" xSize="1867" ySize="1352" />
+      <DstRect xOff="0" yOff="0" xSize="1867" ySize="1352" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="3">
+    <Description>Bleu (450-520 nm)</Description>
+    <NoDataValue>-10000</NoDataValue>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="0">/vsitar/tests/tests_data/SPOT6_2018_France-Ortho_NC_DRS-MS_SPOT6_2018_FRANCE_ORTHO_NC_GEOSUD_MS_82.tar.gz/SPOT6_2018_FRANCE_ORTHO_NC_GEOSUD_MS_82/PROD_SPOT6_001/VOL_SPOT6_001_A/IMG_SPOT6_MS_001_A/IMG_SPOT6_MS_201805111031189_ORT_SPOT6_20180517_1333011n1b80qobn5ex_1_R1C1.TIF</SourceFilename>
+      <SourceBand>3</SourceBand>
+      <SrcRect xOff="0" yOff="0" xSize="1867" ySize="1352" />
+      <DstRect xOff="0" yOff="0" xSize="1867" ySize="1352" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="4">
+    <Description>Infrarouge proche (760-890 nm)</Description>
+    <NoDataValue>-10000</NoDataValue>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="0">/vsitar/tests/tests_data/SPOT6_2018_France-Ortho_NC_DRS-MS_SPOT6_2018_FRANCE_ORTHO_NC_GEOSUD_MS_82.tar.gz/SPOT6_2018_FRANCE_ORTHO_NC_GEOSUD_MS_82/PROD_SPOT6_001/VOL_SPOT6_001_A/IMG_SPOT6_MS_001_A/IMG_SPOT6_MS_201805111031189_ORT_SPOT6_20180517_1333011n1b80qobn5ex_1_R1C1.TIF</SourceFilename>
+      <SourceBand>4</SourceBand>
+      <SrcRect xOff="0" yOff="0" xSize="1867" ySize="1352" />
+      <DstRect xOff="0" yOff="0" xSize="1867" ySize="1352" />
+    </SimpleSource>
+  </VRTRasterBand>
+</VRTDataset>
