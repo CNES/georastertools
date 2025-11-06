@@ -1,13 +1,16 @@
-FROM continuumio/miniconda3
+FROM ghcr.io/osgeo/gdal:ubuntu-small-3.9.2
 
-ADD environment.yml /env/environment.yml
-ADD env_update.yml /env/env_update.yml
+ADD . /georastertools_src/
 
-RUN conda env update -f /env/environment.yml -n base
-RUN conda env update -f /env/env_update.yml -n base
+RUN apt-get update -y --quiet && \
+    DEBIAN_FRONTED=noninteractive apt-get install --quiet --yes --no-install-recommends \
+        python3-pip \
+        build-essential \
+        python3-dev \
+        && \
+    PIP_NO_BINARY=rasterio pip install --no-cache-dir --break-system-packages /georastertools_src && \
+    rm -r /georastertools_src/ && \
+    DEBIAN_FRONTED=noninteractive apt-get purge --quiet --yes build-essential python3-dev &&\
+    DEBIAN_FRONTED=noninteractive apt-get autoremove --quiet --yes
 
-ADD . .
-
-RUN pip install -e .
-
-CMD ["rastertools", "--help"]
+CMD ["rio", "georastertools", "--help"]
