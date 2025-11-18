@@ -22,21 +22,22 @@ if __name__ == "__main__":
               zip_safe=False,
               setup_requires=["setuptools_scm"],
               install_requires=[
-                  'click==8.1.8',
+                  'click>=8.2',
                   'rasterio',
                   'pytest>=3.6',
                   'pytest-cov',
                   'geopandas>=0.13',
-                  'kiwisolver==1.4.5',
-                  'matplotlib==3.7.3',
-                  'packaging==24.1',
-                  'fiona==1.9.6',
-                  'sphinx_rtd_theme==3.0.1',
-                  'sphinx==7.1.2',
+                  'kiwisolver>=1.4.5',
+                  'matplotlib>=3.7.3',
+                  'packaging>=24.1',
+                  'fiona>=1.9.6',
+                  'sphinx_rtd_theme>=3.0.1',
+                  'sphinx>=7.1.2',
                   'scipy',
                   'pyscaffold',
                   'gdal>=3.5.0,<3.10',
-                  'tqdm>=4.66'
+                  'tqdm>=4.66',
+                  'numpy<2'
               ],
               entry_points="""
                 [rasterio.rio_plugins]
