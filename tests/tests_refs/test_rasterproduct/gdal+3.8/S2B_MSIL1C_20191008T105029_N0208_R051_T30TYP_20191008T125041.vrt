@@ -1,0 +1,134 @@
+<VRTDataset rasterXSize="1203" rasterYSize="1175">
+  <SRS dataAxisToSRSAxisMapping="1,2">PROJCS["WGS 84 / UTM zone 30N",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",-3],PARAMETER["scale_factor",0.9996],PARAMETER["false_easting",500000],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","32630"]]</SRS>
+  <GeoTransform>  7.4286000000000000e+05,  1.0000000000000000e+01,  0.0000000000000000e+00,  4.8486600000000000e+06,  0.0000000000000000e+00, -1.0000000000000000e+01</GeoTransform>
+  <VRTRasterBand dataType="UInt16" band="1">
+    <Description>Band 2 (490nm)</Description>
+    <NoDataValue>0</NoDataValue>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="0">/vsizip/tests/tests_data/S2B_MSIL1C_20191008T105029_N0208_R051_T30TYP_20191008T125041.zip/S2B_MSIL1C_20191008T105029_N0208_R051_T30TYP_20191008T125041.SAFE/GRANULE/L1C_T30TYP_A013519_20191008T105335/IMG_DATA/T30TYP_20191008T105029_B02.jp2</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SrcRect xOff="0" yOff="0" xSize="1198" ySize="1170" />
+      <DstRect xOff="5" yOff="5" xSize="1198" ySize="1170" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="UInt16" band="2">
+    <Description>Band 3 (560nm)</Description>
+    <NoDataValue>0</NoDataValue>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="0">/vsizip/tests/tests_data/S2B_MSIL1C_20191008T105029_N0208_R051_T30TYP_20191008T125041.zip/S2B_MSIL1C_20191008T105029_N0208_R051_T30TYP_20191008T125041.SAFE/GRANULE/L1C_T30TYP_A013519_20191008T105335/IMG_DATA/T30TYP_20191008T105029_B03.jp2</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SrcRect xOff="0" yOff="0" xSize="1198" ySize="1170" />
+      <DstRect xOff="5" yOff="5" xSize="1198" ySize="1170" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="UInt16" band="3">
+    <Description>Band 4 (665nm)</Description>
+    <NoDataValue>0</NoDataValue>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="0">/vsizip/tests/tests_data/S2B_MSIL1C_20191008T105029_N0208_R051_T30TYP_20191008T125041.zip/S2B_MSIL1C_20191008T105029_N0208_R051_T30TYP_20191008T125041.SAFE/GRANULE/L1C_T30TYP_A013519_20191008T105335/IMG_DATA/T30TYP_20191008T105029_B04.jp2</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SrcRect xOff="0" yOff="0" xSize="1198" ySize="1170" />
+      <DstRect xOff="5" yOff="5" xSize="1198" ySize="1170" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="UInt16" band="4">
+    <Description>Band 8 (842nm)</Description>
+    <NoDataValue>0</NoDataValue>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="0">/vsizip/tests/tests_data/S2B_MSIL1C_20191008T105029_N0208_R051_T30TYP_20191008T125041.zip/S2B_MSIL1C_20191008T105029_N0208_R051_T30TYP_20191008T125041.SAFE/GRANULE/L1C_T30TYP_A013519_20191008T105335/IMG_DATA/T30TYP_20191008T105029_B08.jp2</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SrcRect xOff="0" yOff="0" xSize="1198" ySize="1170" />
+      <DstRect xOff="5" yOff="5" xSize="1198" ySize="1170" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="UInt16" band="5">
+    <Description>Band 11 (1610nm)</Description>
+    <NoDataValue>0</NoDataValue>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="0">/vsizip/tests/tests_data/S2B_MSIL1C_20191008T105029_N0208_R051_T30TYP_20191008T125041.zip/S2B_MSIL1C_20191008T105029_N0208_R051_T30TYP_20191008T125041.SAFE/GRANULE/L1C_T30TYP_A013519_20191008T105335/IMG_DATA/T30TYP_20191008T105029_B11.jp2</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SrcRect xOff="0" yOff="0" xSize="599" ySize="585" />
+      <DstRect xOff="4" yOff="4" xSize="1198" ySize="1170" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="UInt16" band="6">
+    <Description>Band 12 (2190nm)</Description>
+    <NoDataValue>0</NoDataValue>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="0">/vsizip/tests/tests_data/S2B_MSIL1C_20191008T105029_N0208_R051_T30TYP_20191008T125041.zip/S2B_MSIL1C_20191008T105029_N0208_R051_T30TYP_20191008T125041.SAFE/GRANULE/L1C_T30TYP_A013519_20191008T105335/IMG_DATA/T30TYP_20191008T105029_B12.jp2</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SrcRect xOff="0" yOff="0" xSize="599" ySize="585" />
+      <DstRect xOff="4" yOff="4" xSize="1198" ySize="1170" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="UInt16" band="7">
+    <Description>Band 5 (705nm)</Description>
+    <NoDataValue>0</NoDataValue>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="0">/vsizip/tests/tests_data/S2B_MSIL1C_20191008T105029_N0208_R051_T30TYP_20191008T125041.zip/S2B_MSIL1C_20191008T105029_N0208_R051_T30TYP_20191008T125041.SAFE/GRANULE/L1C_T30TYP_A013519_20191008T105335/IMG_DATA/T30TYP_20191008T105029_B05.jp2</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SrcRect xOff="0" yOff="0" xSize="599" ySize="585" />
+      <DstRect xOff="4" yOff="4" xSize="1198" ySize="1170" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="UInt16" band="8">
+    <Description>Band 6 (740nm)</Description>
+    <NoDataValue>0</NoDataValue>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="0">/vsizip/tests/tests_data/S2B_MSIL1C_20191008T105029_N0208_R051_T30TYP_20191008T125041.zip/S2B_MSIL1C_20191008T105029_N0208_R051_T30TYP_20191008T125041.SAFE/GRANULE/L1C_T30TYP_A013519_20191008T105335/IMG_DATA/T30TYP_20191008T105029_B06.jp2</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SrcRect xOff="0" yOff="0" xSize="599" ySize="585" />
+      <DstRect xOff="4" yOff="4" xSize="1198" ySize="1170" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="UInt16" band="9">
+    <Description>Band 7 (783nm)</Description>
+    <NoDataValue>0</NoDataValue>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="0">/vsizip/tests/tests_data/S2B_MSIL1C_20191008T105029_N0208_R051_T30TYP_20191008T125041.zip/S2B_MSIL1C_20191008T105029_N0208_R051_T30TYP_20191008T125041.SAFE/GRANULE/L1C_T30TYP_A013519_20191008T105335/IMG_DATA/T30TYP_20191008T105029_B07.jp2</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SrcRect xOff="0" yOff="0" xSize="599" ySize="585" />
+      <DstRect xOff="4" yOff="4" xSize="1198" ySize="1170" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="UInt16" band="10">
+    <Description>Band 8a (865nm)</Description>
+    <NoDataValue>0</NoDataValue>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="0">/vsizip/tests/tests_data/S2B_MSIL1C_20191008T105029_N0208_R051_T30TYP_20191008T125041.zip/S2B_MSIL1C_20191008T105029_N0208_R051_T30TYP_20191008T125041.SAFE/GRANULE/L1C_T30TYP_A013519_20191008T105335/IMG_DATA/T30TYP_20191008T105029_B8A.jp2</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SrcRect xOff="0" yOff="0" xSize="599" ySize="585" />
+      <DstRect xOff="4" yOff="4" xSize="1198" ySize="1170" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="UInt16" band="11">
+    <Description>Band 1 (443nm)</Description>
+    <NoDataValue>0</NoDataValue>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="0">/vsizip/tests/tests_data/S2B_MSIL1C_20191008T105029_N0208_R051_T30TYP_20191008T125041.zip/S2B_MSIL1C_20191008T105029_N0208_R051_T30TYP_20191008T125041.SAFE/GRANULE/L1C_T30TYP_A013519_20191008T105335/IMG_DATA/T30TYP_20191008T105029_B01.jp2</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SrcRect xOff="0" yOff="0" xSize="200" ySize="195" />
+      <DstRect xOff="0" yOff="0" xSize="1200" ySize="1170" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="UInt16" band="12">
+    <Description>Band 9 (940nm)</Description>
+    <NoDataValue>0</NoDataValue>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="0">/vsizip/tests/tests_data/S2B_MSIL1C_20191008T105029_N0208_R051_T30TYP_20191008T125041.zip/S2B_MSIL1C_20191008T105029_N0208_R051_T30TYP_20191008T125041.SAFE/GRANULE/L1C_T30TYP_A013519_20191008T105335/IMG_DATA/T30TYP_20191008T105029_B09.jp2</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SrcRect xOff="0" yOff="0" xSize="200" ySize="195" />
+      <DstRect xOff="0" yOff="0" xSize="1200" ySize="1170" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="UInt16" band="13">
+    <Description>Band 10 (1375nm)</Description>
+    <NoDataValue>0</NoDataValue>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="0">/vsizip/tests/tests_data/S2B_MSIL1C_20191008T105029_N0208_R051_T30TYP_20191008T125041.zip/S2B_MSIL1C_20191008T105029_N0208_R051_T30TYP_20191008T125041.SAFE/GRANULE/L1C_T30TYP_A013519_20191008T105335/IMG_DATA/T30TYP_20191008T105029_B10.jp2</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SrcRect xOff="0" yOff="0" xSize="200" ySize="195" />
+      <DstRect xOff="0" yOff="0" xSize="1200" ySize="1170" />
+    </SimpleSource>
+  </VRTRasterBand>
+</VRTDataset>

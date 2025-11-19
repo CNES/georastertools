@@ -23,11 +23,11 @@ _logger = logging.getLogger(__name__)
 class TestCase:
     __test__ = False
 
-    def __init__(self, args):
+    def __init__(self, args, sys_code=0):
         self._args = args.split()
         self._outputs = list()
         self._logs = list()
-        self._sys_exit = 0
+        self._sys_exit = sys_code
 
     def __repr__(self):
         return (f"georastertools {' '.join(self._args)}"
@@ -144,7 +144,7 @@ def test_rastertools_command_line_info():
         TestCase("--help"),
         TestCase("-h"),
         TestCase("--version"),
-        TestCase(""),
+        TestCase("", 2),
         TestCase("radioindice --help"),
         TestCase("ri -h"),
         TestCase("zonalstats --help"),
