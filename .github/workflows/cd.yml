@@ -30,7 +30,7 @@ jobs:
       - name: Build package
         shell: bash -l {0}
         run: |
-          conda create -n deploy_env python=3.12 build -c conda-forge -y
+          conda create -n deploy_env python=3.12 python-build -c conda-forge -y
           conda activate deploy_env
           python -m build -C--global-option=bdist_wheel -C--global-option=--build-number=0 --wheel
 
