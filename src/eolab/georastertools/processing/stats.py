@@ -477,18 +477,20 @@ def _gen_stats(dataset, stats: List[str] = None,
     feature_stats = dict()
 
     # compute stats
+    # we force dtype to float64 to avoid precision errors
     functions = {
-        'min': np.ma.min,
-        'max': np.ma.max,
-        'mean': np.ma.mean,
-        'sum': np.ma.sum,
-        'std': np.ma.std,
-        'median': np.ma.median
+        'min': {'function': np.ma.min, 'options': {}},
+        'max': {'function': np.ma.max, 'options': {}},
+        'mean': {'function': np.ma.mean, 'options': {"dtype": np.float64}},
+        'sum': {'function': np.ma.sum, 'options': {"dtype": np.float64}},
+        'std': {'function': np.ma.std, 'options': {"dtype": np.float64}},
+        'median': {'function': np.ma.median, 'options': {}},
     }
 
-    for key, function in functions.items():
+    for key, key_content in functions.items():
         if key in stats:
-            feature_stats[f'{prefix_stats}{key}'] = float(function(dataset))
+            function = key_content["function"]
+            feature_stats[f'{prefix_stats}{key}'] = float(function(dataset, **key_content["options"]))
 
     if 'range' in stats:
         min_key = f'{prefix_stats}min'
@@ -501,7 +503,7 @@ def _gen_stats(dataset, stats: List[str] = None,
     # because np.ma has no percentile computation capabilities
     dataset_com = dataset.compressed()
     for pctile in [s for s in stats if s.startswith('percentile_')]:
-        q = float(pctile.replace("percentile_", ''))
+        q = np.float64(pctile.replace("percentile_", ''))
         feature_stats[f'{prefix_stats}{pctile}'] = np.percentile(dataset_com, q)
     if 'mad' in stats:
         feature_stats[f'{prefix_stats}mad'] = median_abs_deviation(dataset_com.flatten())

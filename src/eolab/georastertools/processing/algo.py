@@ -797,6 +797,6 @@ def hillshade(input_data : np.ndarray, elevation : float = 0.0, azimuth : float 
         ratios = np.maximum(ratios, new_ratios)
 
     angles = np.arctan(ratios)
-    out[0, radius: shape[1] - radius, radius: shape[2] - radius] = angles > np.radians(elevation)
+    out[0, radius: shape[1] - radius, radius: shape[2] - radius] = angles > np.radians(elevation, dtype=np.float32)
 
     return out
