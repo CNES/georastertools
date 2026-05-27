@@ -52,7 +52,7 @@ jobs:
       shell: bash -l {0}
       run: |
         conda activate test_env
-        PYTHONPATH=src pytest --compare --durations=0 --cov=src/eolab/georastertools/ --cov-report=xml:.ci-reports-georastertools/coverage_georastertools.xml --cov-report html:cov_html_georastertools --cov-report=term --junitxml=pytest-results-georastertools.xml
+        pytest --compare --durations=0 --cov=src/eolab/georastertools/ --cov-report=xml:.ci-reports-georastertools/coverage_georastertools.xml --cov-report html:cov_html_georastertools --cov-report=term --junitxml=pytest-results-georastertools.xml
     - name: Upload Coverage Report
       uses: actions/upload-artifact@v4
       with:
