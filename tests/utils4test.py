@@ -64,7 +64,7 @@ def basename(infile):
     return file.name if suffix == 0 else file.name[:-suffix]
 
 
-def cmpfiles(a : str, b : str, common : list, tolerance : float =1e-9, **kwargs) -> tuple:
+def cmpfiles(a : str, b : str, common : list, tolerance : float=1e-9, **kwargs) -> tuple:
     """
     Compare common files in two directories.
 
