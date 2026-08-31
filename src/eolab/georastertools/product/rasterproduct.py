@@ -491,7 +491,7 @@ class RasterProduct:
             add_masks_to_vrt(temp_image, input_vrt, masks_index,
                              self.rastertype.maskfunc)
             driver = gdal.GetDriverByName('VRT')
-            vrt = gdal.Open(temp_image)
+            vrt = gdal.Open(str(temp_image))
             masked_image = outdir.joinpath(f"{uuid}{basename}-mask.vrt")
             copy_ds = driver.CreateCopy(masked_image.as_posix(), vrt, strict=0)
             del copy_ds
