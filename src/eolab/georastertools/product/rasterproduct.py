@@ -460,32 +460,45 @@ class RasterProduct:
         # convert parameters defined as str to Path
         outdir = utils.to_path(self._vrt_outputdir, "/vsimem/")
         basename = utils.get_basename(self.file)
-
-        # create a tempdir for generated temporary files
-        tempdir = Path(tempfile.gettempdir())
-
-        # create a new vrt with only bands_files
-        # it must be written to disk so that we can read it and add a maskband
-        temp_image = tempdir.joinpath(f"{uuid}{basename}-temp.vrt")
-        ds = gdal.BuildVRT(temp_image.as_posix(), input_vrt.as_posix(),
-                           bandList=range(1, nb_bands + 1))
-        # free resource from GDAL
-        del ds
-
-        # Add mask band
-        _logger.debug("Adding band masks")
-        masks_index = list(range(nb_bands + 1, nb_bands + nb_masks + 1))
-        vrt_new_content = add_masks_to_vrt(temp_image, input_vrt, masks_index,
-                                           self.rastertype.maskfunc)
-        driver = gdal.GetDriverByName('VRT')
-        vrt = gdal.Open(vrt_new_content)
         masked_image = outdir.joinpath(f"{uuid}{basename}-mask.vrt")
-        copy_ds = driver.CreateCopy(masked_image.as_posix(), vrt, strict=0)
-        del copy_ds
-        # delete temp image
-        temp_image.unlink()
-        # free resource from GDAL
-        del vrt
+
+        if self._vrt_outputdir:  # output written in disk
+            ds = gdal.BuildVRT(masked_image.as_posix(), input_vrt.as_posix(),
+                               bandList=range(1, nb_bands + 1))
+            # free resource from GDAL
+            del ds
+            # Add mask band
+            _logger.debug("Adding band masks")
+            masks_index = list(range(nb_bands + 1, nb_bands + nb_masks + 1))
+            add_masks_to_vrt(masked_image, input_vrt, masks_index,
+                             self.rastertype.maskfunc)
+
+        else:  # output written in memory
+            # create a tempdir for generated temporary files
+            tempdir = Path(tempfile.gettempdir())
+
+            # create a new vrt with only bands_files
+            # it must be written to disk so that we can read it and add a maskband
+            temp_image = tempdir.joinpath(f"{uuid}{basename}-temp.vrt")
+            ds = gdal.BuildVRT(temp_image.as_posix(), input_vrt.as_posix(),
+                               bandList=range(1, nb_bands + 1))
+            # free resource from GDAL
+            del ds
+
+            # Add mask band
+            _logger.debug("Adding band masks")
+            masks_index = list(range(nb_bands + 1, nb_bands + nb_masks + 1))
+            add_masks_to_vrt(temp_image, input_vrt, masks_index,
+                             self.rastertype.maskfunc)
+            driver = gdal.GetDriverByName('VRT')
+            vrt = gdal.Open(temp_image)
+            masked_image = outdir.joinpath(f"{uuid}{basename}-mask.vrt")
+            copy_ds = driver.CreateCopy(masked_image.as_posix(), vrt, strict=0)
+            del copy_ds
+            # delete temp image
+            temp_image.unlink()
+            # free resource from GDAL
+            del vrt
 
         return masked_image
 

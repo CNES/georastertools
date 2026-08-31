@@ -35,7 +35,7 @@ if __name__ == "__main__":
                   'sphinx>=7.1.2',
                   'scipy',
                   'pyscaffold',
-                  'gdal>=3.5.0,<3.11',
+                  'gdal>=3.5.0,<3.13',
                   'tqdm>=4.66',
                   'numpy<2'
               ],
