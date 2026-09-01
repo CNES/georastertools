@@ -45,7 +45,7 @@ jobs:
     - name: Create test env
       shell: bash -l {0}
       run: |
-        conda create -n test_env python=3.12 pip libgdal=3.9 -c conda-forge -c defaults -y
+        conda create -n test_env python=3.12 pip libgdal=3.13 -c conda-forge -c defaults -y
         conda activate test_env
         PIP_NO_BINARY=rasterio pip install .
     - name: test
