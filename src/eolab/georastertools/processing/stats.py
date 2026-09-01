@@ -374,7 +374,9 @@ def plot_stats(chartfile: str, stats_per_date: Dict[datetime.datetime, gpd.GeoDa
 
             for zone in zones:
                 y = np.array(all_stats.loc[all_stats[index_name] == zone][stat_name])
-                line, = plt.plot_date(x, y, '-')
+                line, = plt.plot(x, y, '-')
+                ax = plt.gca()
+                ax.xaxis.axis_date()
                 lines.append(line)
 
             plt.title(stat_name)
@@ -383,7 +385,7 @@ def plot_stats(chartfile: str, stats_per_date: Dict[datetime.datetime, gpd.GeoDa
     plt.xlabel('date')
     plt.ylabel('values')
 
-    plt.figlegend(lines, zones, loc='lower center', ncol=2, fancybox=True, shadow=True)
+    plt.figlegend(lines[:len(zones)], zones, loc='lower center', ncol=2, fancybox=True, shadow=True)
     plt.savefig(chartfile, bbox_inches='tight')
     if display:
         plt.show()

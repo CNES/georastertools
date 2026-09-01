@@ -103,7 +103,7 @@ def _func2vrt(xml_element, funcname: str, funcdef: str = None):
 
 
 def add_masks_to_vrt(src_vrt: Union[Path, str], maskfile: Union[Path, str], bands: List[int] = [1],
-                     funcname: str = None, funcdef: str = None) -> str:
+                     funcname: str = None, funcdef: str = None):
     """Adds a mask bands to the vrt.
 
     Args:
@@ -119,9 +119,6 @@ def add_masks_to_vrt(src_vrt: Union[Path, str], maskfile: Union[Path, str], band
         funcdef (str, optional, default=None):
             Function definition (without its signature). If None, the function funcname
             must be available in the scope
-
-    Returns:
-        (str): XML content (vrt format) with the added mask band.
     """
     svrt = src_vrt.as_posix() if isinstance(src_vrt, Path) else src_vrt
     mask = maskfile.as_posix() if isinstance(maskfile, Path) else maskfile
@@ -137,7 +134,7 @@ def add_masks_to_vrt(src_vrt: Union[Path, str], maskfile: Union[Path, str], band
             _func2vrt(vrtrasterband, funcname, funcdef)
         _file2vrt(vrtrasterband, mask, bands)
 
-        return ET.tostring(root)
+    tree.write(svrt)
 
 
 def set_band_descriptions(src_vrt: Union[Path, str], descriptions: List[str]):

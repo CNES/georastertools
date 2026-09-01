@@ -70,6 +70,11 @@ class Element:
             p2 = shapely.wkt.loads(t2)
             if p1.hausdorff_distance(p2) > tolerance:
                 return False
+        elif "GeoTransform" in self.name:
+            transform1 = [float(x) for x in t1.split(",")]
+            transform2 = [float(x) for x in t2.split(",")]
+            if transform1 != transform2:
+                return False
         else:
             if t2 != t1:
                 return False
