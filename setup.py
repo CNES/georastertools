@@ -37,7 +37,7 @@ if __name__ == "__main__":
                   'pyscaffold',
                   'gdal>=3.5.0,<3.14',
                   'tqdm>=4.66',
-                  'numpy<2'
+                  'numpy'
               ],
               entry_points="""
                 [rasterio.rio_plugins]
